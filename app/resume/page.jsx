@@ -19,7 +19,7 @@ import Link from "next/link";
 const about = {
   title: "About Me",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure explicabo assumenda nisi est dolorem amet neque aspernatur? Pariatur, eligendi explicabo!",
+    "I am a dedicated and detail-oriented full stack developer and data analyst with a strong background in web development and machine learning. Currently pursuing a degree in Computer Engineering at SPIT Mumbai, I have experience in building dynamic web applications using the MERN stack and am proficient in JavaScript, React, and Node.js. My analytical skills enable me to transform complex data into actionable insights, enhancing decision-making processes. I thrive in collaborative environments, continuously seeking opportunities to learn and grow in technology and software development.",
   info: [
     {
       fieldName: "Name",
@@ -90,8 +90,7 @@ const experience = {
 const education = {
   icon: "/assets/resume/cap.svg",
   title: "My Education",
-  description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, corporis reiciendis magnam nam delectus quasi.",
+  description: "Building a strong foundation for a brighter tomorrow.",
   items: [
     {
       icon: "/assets/resume/education/spit_logo.jpeg",
@@ -116,7 +115,7 @@ const education = {
 const skills = {
   title: "My Skills",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, corporis reiciendis magnam nam delectus quasi.",
+    "Progressively advancing in my professional journey, I have consistently acquired new skills and experiences that contribute to my growth and expertise.",
   items: [
     {
       icon: <FaHtml5 />,

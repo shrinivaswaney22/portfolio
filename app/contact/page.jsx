@@ -1,5 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import emailjs from "emailjs-com";
 
 //components/ui
 import { Button } from "@/components/ui/button";
@@ -31,11 +33,60 @@ const info = [
   {
     icon: <FaMapMarkerAlt />,
     title: "Address",
-    detail: "Mumbai,Maharashtra,India",
+    detail: "Mumbai, Maharashtra, India",
   },
 ];
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .send(
+        "service_gdq5muu",
+        "template_0f2s5wo",
+        {
+          to_name: "Your Team",
+          from_name: formData.firstName + " " + formData.lastName,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+        },
+        "E24I6YvZVh5KauOlo"
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phone: "",
+            service: "",
+            message: "",
+          });
+        },
+        (err) => {
+          console.error("FAILED...", err);
+        }
+      );
+  };
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -49,10 +100,10 @@ const Contact = () => {
         <div className="flex flex-col xl:flex-row gap-[30px]">
           <div className="xl:w-[54%] order-2 xl:order-none">
             <form
-              action="submit"
+              onSubmit={handleSubmit}
               className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-3xl"
             >
-              <h3 className="text-4xl text-accent">Lets Work Together</h3>
+              <h3 className="text-4xl text-accent">Let's Work Together</h3>
               <p className="text-white/60">
                 Hello Recruiters and Fellow Colleagues!
               </p>
@@ -60,26 +111,55 @@ const Contact = () => {
                 Fill out the following form to work with me!!
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="firstname" placeholder="First Name" />
-                <Input type="lastname" placeholder="Last Name" />
-                <Input type="email" placeholder="Email ID" />
-                <Input type="number" placeholder="Contact Number" />
+                <Input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  placeholder="First Name"
+                />
+                <Input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  placeholder="Last Name"
+                />
+                <Input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Email ID"
+                />
+                <Input
+                  type="number"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Contact Number"
+                />
               </div>
-              <Select>
+              <Select name="service" onChange={handleChange}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select a Service" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
-                    <SelectItem value="est">Web Development</SelectItem>
-                    <SelectItem value="cst">UI/UX Design</SelectItem>
-                    <SelectItem value="mst">Debugging</SelectItem>
-                    <SelectItem value="vst">SEO</SelectItem>
+                    <SelectItem value="Web Development">
+                      Web Development
+                    </SelectItem>
+                    <SelectItem value="UI/UX Design">UI/UX Design</SelectItem>
+                    <SelectItem value="Debugging">Debugging</SelectItem>
+                    <SelectItem value="SEO">SEO</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
               <Textarea
                 className="h-[200px]"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Type your message here..."
               />
               <Button size="md" className="max-w-40">

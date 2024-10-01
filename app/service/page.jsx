@@ -8,28 +8,28 @@ const service = [
     num: "01",
     name: "UI/UX Design",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum eaque eius eum doloremque sed iste inventore quo blanditiis suscipit sapiente.",
+      "Transform your ideas into visually stunning and user-friendly interfaces with my UI/UX design expertise. I focus on creating intuitive designs that enhance user satisfaction and drive conversions.",
     href: "/service/ui-ux-design",
   },
   {
     num: "02",
     name: "Web Development",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum eaque eius eum doloremque sed iste inventore quo blanditiis suscipit sapiente.",
+      "Bring your web projects to life with my full-stack web development services. I build responsive, high-performance websites tailored to your needs, ensuring a seamless experience across all devices.",
     href: "/service/web-development",
   },
   {
     num: "03",
     name: "Debugging",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum eaque eius eum doloremque sed iste inventore quo blanditiis suscipit sapiente.",
+      "Ensure your applications run smoothly with my comprehensive debugging services. I identify and resolve issues promptly, optimizing performance and delivering a seamless user experience.",
     href: "/service/debugging",
   },
   {
     num: "04",
     name: "SEO",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum eaque eius eum doloremque sed iste inventore quo blanditiis suscipit sapiente.",
+      "Enhance your online visibility and drive organic traffic with my tailored SEO strategies. I optimize your website's content and structure to improve search engine rankings and user engagement.",
     href: "/service/seo",
   },
 ];
