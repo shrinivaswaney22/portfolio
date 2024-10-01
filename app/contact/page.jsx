@@ -54,9 +54,10 @@ const Contact = () => {
             >
               <h3 className="text-4xl text-accent">Lets Work Together</h3>
               <p className="text-white/60">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Expedita perspiciatis velit ab laborum veritatis officia
-                praesentium nam ullam quas eum?
+                Hello Recruiters and Fellow Colleagues!
+              </p>
+              <p className="text-white/60">
+                Fill out the following form to work with me!!
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input type="firstname" placeholder="First Name" />
